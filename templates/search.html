@@ -17,8 +17,13 @@
   </head>
   <body>
     <header>
-      <a href="javascript:window.history.back();" class="back">뒤로가기</a>
-      <h1>Search Results for {{keyword}} :</h1>
+      <a href="/" class="back">뒤로가기</a>
+      <h1>
+        Search Results for
+        <span class="keyword">
+          {% if jobs %} All JOBS {% else %} {{keyword}} {% endif %}
+        </span>
+      </h1>
     </header>
     <main class="search_area">
       <figure>
@@ -52,6 +57,12 @@
         <div class="no_result">검색결과가 없습니다.</div>
         {% endif %}
       </figure>
+      <footer>
+        <div class="inner">
+          <div>created by Dang</div>
+          <div>Copyright (c) 2026 Job Scrapper All Right Reserved.</div>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

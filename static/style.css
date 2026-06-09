@@ -36,6 +36,11 @@ body {
   background: #3ae374;
 }
 
+::selection {
+  color: #fff;
+  background-color: #3ae374;
+}
+
 h1 {
   width: 100%;
   font-family: 'Press Start 2P', system-ui;
@@ -109,6 +114,7 @@ header {
   position: absolute;
   left: 30px;
   top: 40px;
+  z-index: 10;
 }
 
 header h1 {
@@ -117,11 +123,37 @@ header h1 {
 }
 
 .search_area {
-  padding: 180px 0 30px;
+  position: relative;
+  width: 100%;
+  min-height: calc(100dvh - 250px);
+  padding: 180px 0 70px;
 }
 
 .no_result {
-  animation: ani 0.5s infinite;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.keyword {
+  font-family: 'Press Start 2P', system-ui;
+  animation: ani 0.8s infinite;
+}
+
+footer {
+  padding: 0 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+footer .inner {
+  font-size: 14px;
+  padding: 10px 0;
+  border-top: 1px dashed #3ae374;
+  display: flex;
+  justify-content: space-between;
 }
 
 @keyframes ani {
