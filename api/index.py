@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, send_file
 import json
 
 def search_jobs(keyword):
-    with open("jobs.json", "r", encoding="utf-8") as file:
+    with open("./jobs.json", "r", encoding="utf-8") as file:
         jobs = json.load(file)
 
     result = []
