@@ -21,7 +21,7 @@
       <h1>
         Search Results for
         <span class="keyword">
-          {% if jobs %} All JOBS {% else %} {{keyword}} {% endif %}
+          {% if keyword == "" %} All JOBS {% else %} {{keyword}} {% endif %}
         </span>
       </h1>
     </header>
