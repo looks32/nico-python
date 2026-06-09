@@ -117,7 +117,7 @@ header h1 {
 }
 
 .search_area {
-  padding-top: 180px;
+  padding: 180px 0 30px;
 }
 
 .no_result {
