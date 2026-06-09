@@ -1,22 +1,31 @@
 <!doctype html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Scrapper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+      href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
   <body>
-    <main class="container">
+    <header>
+      <a href="javascript:window.history.back();" class="back">뒤로가기</a>
       <h1>Search Results for {{keyword}} :</h1>
+    </header>
+    <main class="search_area">
       <figure>
         {% if jobs %}
-        <table class="striped">
+        <table>
           <thead>
-            <th>제목</th>
+            <th>직군</th>
             <th>회사명</th>
             <th>설명</th>
             <th>링크</th>
@@ -32,14 +41,16 @@
                   href="{{job.link}}"
                   target="_blank"
                   title="{{ job.title }} 바로가기"
-                  >공고 보러가기</a
+                  >Link</a
                 >
               </td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
-        {% else %} 검색결과가 없습니다. {% endif %}
+        {% else %}
+        <div class="no_result">검색결과가 없습니다.</div>
+        {% endif %}
       </figure>
     </main>
   </body>
