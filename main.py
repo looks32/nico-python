@@ -33,4 +33,6 @@ def search():
         db[keyword] = jobs
     return render_template("search.html", keyword=keyword, jobs=jobs)
 
-app.run("0.0.0.0") 
+# app.run("0.0.0.0") 
+# if __name__ == "__main__":
+    # app.run("0.0.0.0")
